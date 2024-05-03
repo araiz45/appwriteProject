@@ -10,12 +10,13 @@ import { Separator } from "@radix-ui/react-separator";
 import Link from "next/link";
 import { ID, account } from "@/app/appwrite";
 import { useToast } from "@/components/ui/use-toast";
-import { redirect } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { toast } = useToast();
+  const router = useRouter();
   const [loggedInUser, setLoggedInUser] = useState<any>();
 
   const handleLogin = async (ev: React.FormEvent<HTMLFormElement>) => {
@@ -37,8 +38,8 @@ function LoginPage() {
     try {
       account.createOAuth2Session(
         "google",
-        "http://localhost:3000/main", // Success URL
-        "http://localhost:3000" // Failure URL
+        "https://appwrite-project-zeta.vercel.app/main", // Success URL
+        "https://appwrite-project-zeta.vercel.app/" // Failure URL
       );
     } catch (error) {
       console.error("Error in Authenticating", error);
@@ -52,8 +53,8 @@ function LoginPage() {
     try {
       account.createOAuth2Session(
         "github",
-        "http://localhost:3000/main", // Success URL
-        "http://localhost:3000" // Failure URL
+        "https://appwrite-project-zeta.vercel.app/main", // Success URL
+        "https://appwrite-project-zeta.vercel.app/" // Failure URL
       );
     } catch (error) {
       console.error("Error in Authenticating");

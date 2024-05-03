@@ -57,8 +57,8 @@ function RegisterPage() {
     try {
       account.createOAuth2Session(
         "google",
-        "http://localhost:3000/main", // Success URL
-        "http://localhost:3000" // Failure URL
+        "https://appwrite-project-zeta.vercel.app/main", // Success URL
+        "https://appwrite-project-zeta.vercel.app/" // Failure URL
       );
     } catch (error) {
       console.error("Error in Authenticating");
@@ -68,8 +68,8 @@ function RegisterPage() {
     try {
       account.createOAuth2Session(
         "github",
-        "http://localhost:3000/main", // Success URL
-        "http://localhost:3000" // Failure URL
+        "https://appwrite-project-zeta.vercel.app/main", // Success URL
+        "https://appwrite-project-zeta.vercel.app/" // Failure URL
       );
     } catch (error) {
       console.error("Error in Authenticating");
